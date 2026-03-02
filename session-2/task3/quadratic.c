@@ -21,6 +21,19 @@ int main( void ) {
      * You can define additional variable for intermediate results to make the code simpler.
      * Print out the final results for the 2 roots as float values.
      */
+     float *pa;
+     float *pb;
+     float *pc;
+
+     pa = &a;
+     pb = &b;
+     pc = &c;
+
+
+     
+     printf("The square root of %f is %f \n", a, sqrt(*pa));
+     printf("The square root of %f is %f \n", b, sqrt(*pb));
+     printf("The square root of %f is %f \n", c, sqrt(*pc));
 
     
 
