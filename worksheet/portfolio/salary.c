@@ -12,17 +12,17 @@
 
 
    //defined variables
-   int salary = 50000;
-   float NI = 10;
-   int tax = 0;
+   float salary = 36250;
+   float NI = 8;
+   int tax = 15;
 
-   float contribution;
+   float contribution = 0;
    float takehome;
 
 
    //creating pointers
 
-   int *psalary;
+   float *psalary;
    float *pni;
    int *ptax;
 
@@ -51,26 +51,26 @@
    // calculate take home pay:
    if (beforetax > 12500) {
 
-      int taxxed;
+      float taxxed;
       float taxamo; 
 
       //tax calc:
-      taxxed = (*psalary - 12500);
-      taxamo = ((taxxed) * ((*ptax)/100));
+      taxxed = (beforetax - 12500);
+      taxamo = ((taxxed) * (((float)(*ptax)/100)));
 
 
       *ptakehome = beforetax - taxamo;
-      *pcontribution = deduction1 + taxamo;
+      *pcontribution = taxamo ;
 
    }
    else{
-     *pcontribution = deduction1;
      *ptakehome = beforetax;
+    
 
    }
    
-    printf("Salary £%i\n",*psalary);
-    printf("NI contribution £%.2f\n",*pni);
+    printf("Salary £%.2f\n",*psalary);
+    printf("NI contribution £%.2f\n",deduction1);
     printf("Tax contribution £%.2f\n",*pcontribution);
     printf("Take home salary £%.2f\n",*ptakehome);
 
